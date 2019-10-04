@@ -1,8 +1,8 @@
 <?php
 
-namespace umsdk\ios;
+namespace UMSdk\Ios;
 
-use umsdk\IOSNotification;
+use UMSdk\IOSNotification;
 
 //require_once(dirname(__FILE__) . '/../IOSNotification.php');
 

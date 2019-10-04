@@ -1,5 +1,5 @@
 <?php
-namespace umsdk;
+namespace UMSdk;
 
 abstract class UmengNotification {
 	// The host
@@ -51,7 +51,7 @@ abstract class UmengNotification {
 		if (is_null($this->appMasterSecret))
 			throw new \Exception("Please set your app master secret for generating the signature!");
 		$this->checkArrayValues($this->data);
-		return TRUE;
+		return true;
 	}
 
 	private function checkArrayValues($arr) {
@@ -68,6 +68,12 @@ abstract class UmengNotification {
 	abstract function setPredefinedKeyValue($key, $value);
 
 	//send the notification to umeng, return response data if SUCCESS , otherwise throw Exception with details.
+
+    /**
+     * 发送
+     * @return bool|string
+     * @throws \Exception
+     */
 	function send() {
 		//check the fields to make sure that they are not NULL
     	$this->isComplete();

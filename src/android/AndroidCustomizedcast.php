@@ -1,8 +1,8 @@
 <?php
 
-namespace umsdk\android;
+namespace UMSdk\Android;
 
-use umsdk\AndroidNotification;
+use UMSdk\AndroidNotification;
 
 //require_once(dirname(__FILE__) . '/../AndroidNotification.php');
 
