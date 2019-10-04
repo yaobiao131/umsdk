@@ -42,8 +42,10 @@ class UMPushIOS
             // Set 'production_mode' to 'true' if your app is under production mode
             $unicast->setPredefinedKeyValue("production_mode", $body->getProductionMode());
             // Set customized fields
-            $key = array_key_first($body->getCustomizedField());
-            $unicast->setCustomizedField($key, $body->getCustomizedField()[$key]);
+            foreach ($body->getCustomizedField() as $key => $value) {
+                $unicast->setCustomizedField($key, $value);
+            }
+
             print("Sending unicast notification, please wait...\r\n");
             $unicast->send();
             print("Sent SUCCESS\r\n");
@@ -70,8 +72,9 @@ class UMPushIOS
             // Set 'production_mode' to 'true' if your app is under production mode
             $brocast->setPredefinedKeyValue("production_mode", $body->getProductionMode());
             // Set customized fields
-            $key = array_key_first($body->getCustomizedField());
-            $brocast->setCustomizedField($key, $body->getCustomizedField()[$key]);
+            foreach ($body->getCustomizedField() as $key => $value) {
+                $brocast->setCustomizedField($key, $value);
+            }
             print("Sending broadcast notification, please wait...\r\n");
             $brocast->send();
             print("Sent SUCCESS\r\n");

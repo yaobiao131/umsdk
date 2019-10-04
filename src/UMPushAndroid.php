@@ -41,8 +41,9 @@ class UMPushAndroid
             // For how to register a test device, please see the developer doc.
             $brocast->setPredefinedKeyValue("production_mode", $body->getProductionMode());
             // [optional]Set extra fields
-            $key = array_key_first($body->getCustomizedField());
-            $brocast->setExtraField($key, $body->getCustomizedField()[$key]);
+            foreach ($body->getCustomizedField() as $key => $value) {
+                $brocast->setExtraField($key, $value);
+            }
             print("Sending broadcast notification, please wait...\r\n");
             $brocast->send();
             print("Sent SUCCESS\r\n");
@@ -72,8 +73,9 @@ class UMPushAndroid
             // For how to register a test device, please see the developer doc.
             $unicast->setPredefinedKeyValue("production_mode", $body->getProductionMode());
             // Set extra fields
-            $key = array_key_first($body->getCustomizedField());
-            $unicast->setExtraField($key, $body->getCustomizedField()[$key]);
+            foreach ($body->getCustomizedField() as $key => $value) {
+                $unicast->setExtraField($key, $value);
+            }
             print("Sending unicast notification, please wait...\r\n");
             $unicast->send();
             print("Sent SUCCESS\r\n");
