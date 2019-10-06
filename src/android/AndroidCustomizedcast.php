@@ -2,9 +2,9 @@
 
 namespace UMSdk\Android;
 
+use Exception;
 use UMSdk\AndroidNotification;
 
-//require_once(dirname(__FILE__) . '/../AndroidNotification.php');
 
 class AndroidCustomizedcast extends AndroidNotification
 {
@@ -24,6 +24,10 @@ class AndroidCustomizedcast extends AndroidNotification
 
     // Upload file with device_tokens or alias to Umeng
     //return file_id if SUCCESS, else throw Exception with details.
+    /**
+     * @param $content
+     * @throws Exception
+     */
     function uploadContents($content)
     {
         if ($this->data["appkey"] == NULL) throw new Exception("appkey should not be NULL!");

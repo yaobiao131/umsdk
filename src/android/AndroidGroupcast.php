@@ -4,8 +4,6 @@ namespace UMSdk\Android;
 
 use UMSdk\AndroidNotification;
 
-//require_once(dirname(__FILE__) . '/../AndroidNotification.php');
-
 class AndroidGroupcast extends AndroidNotification
 {
     function __construct()

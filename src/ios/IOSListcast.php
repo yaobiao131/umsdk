@@ -4,7 +4,6 @@ namespace UMSdk\Ios;
 
 use UMSdk\IOSNotification;
 
-//require_once(dirname(__FILE__) . '/../IOSNotification.php');
 
 class IOSListcast extends IOSNotification
 {
